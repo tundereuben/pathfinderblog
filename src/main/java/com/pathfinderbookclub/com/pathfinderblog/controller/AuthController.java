@@ -1,5 +1,6 @@
 package com.pathfinderbookclub.com.pathfinderblog.controller;
 
+import com.pathfinderbookclub.com.pathfinderblog.dto.LoginRequest;
 import com.pathfinderbookclub.com.pathfinderblog.dto.RegisterRequest;
 import com.pathfinderbookclub.com.pathfinderblog.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,10 @@ public class AuthController {
     public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
         authService.signup(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody LoginRequest loginRequest) {
+        return authService.login(loginRequest);
     }
 }
