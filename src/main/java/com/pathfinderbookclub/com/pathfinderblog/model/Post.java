@@ -3,13 +3,14 @@ package com.pathfinderbookclub.com.pathfinderblog.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.time.Instant;
 
 @Entity
 @Table
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @NotBlank
     @Column
@@ -21,10 +22,10 @@ public class Post {
     private String content;
 
     @Column
-    private String createdOn;
+    private Instant createdOn;
 
     @Column
-    private String updatedOn;
+    private Instant updatedOn;
 
     @Column
     @NotBlank
@@ -54,19 +55,19 @@ public class Post {
         this.content = content;
     }
 
-    public String getCreatedOn() {
+    public Instant getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(String createdOn) {
+    public void setCreatedOn(Instant createdOn) {
         this.createdOn = createdOn;
     }
 
-    public String getUpdatedOn() {
+    public Instant getUpdatedOn() {
         return updatedOn;
     }
 
-    public void setUpdatedOn(String updatedOn) {
+    public void setUpdatedOn(Instant updatedOn) {
         this.updatedOn = updatedOn;
     }
 
